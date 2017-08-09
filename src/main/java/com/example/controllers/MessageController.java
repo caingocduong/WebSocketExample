@@ -17,7 +17,7 @@ public class MessageController {
 	@MessageMapping("/chat")
 	@SendTo("/topic/messages")
 	public OutputMessage sendMessage(Message message) throws Exception{
-		String time = new SimpleDateFormat("HH:mm").format(new Date());
+		String time = new SimpleDateFormat("HH:mm a").format(new Date(new Date().getTime() + 7 * 3600));
 		
 		return new OutputMessage(message.getFrom(), message.getText() , time);
 	}
