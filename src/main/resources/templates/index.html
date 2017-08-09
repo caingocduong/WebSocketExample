@@ -15,7 +15,7 @@
 			}
 
 			function connect(){
-				var socket = new SockJS('http://localhost:8080/chat');
+				var socket = new SockJS('https://fast-peak-28816.herokuapp.com/chat');
 				stompClient = Stomp.over(socket);
 				stompClient.connect({}, function(frame){
 					setConnected(true);
